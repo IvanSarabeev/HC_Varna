@@ -57,3 +57,73 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+@layer components {
+  .max-container {
+    @apply max-w-[1440px] mx-auto;
+  }
+
+  .padding-containe {
+    @apply p-6 md:p-12 lg:px-16 xl:px-20 xl:py-16;
+  }
+
+  .flexCenter {
+    @apply flex items-center justify-center; 
+  }
+
+  .flexStart {
+    @apply flex items-start justify-start;
+  }
+
+  .flexEnd {
+    @apply flex items-end justify-end;
+  }
+
+  .flexCenterBetween {
+    @apply flex items-center justify-between;
+  }
+
+  .flexCenterEvenly {
+    @apply felx items-center justify-evenly;
+  } 
+
+  .flexCenterAround {
+    @apply flex items-center justify-around;
+  }
+
+  .flexColCenter {
+    @apply flex flex-col justify-center;
+  }
+
+  .flexColStart {
+      @apply flex flex-col justify-start;
+  }
+
+  .flexColEnd {
+      @apply flex flex-col justify-end;
+  }
+
+  .bold-24 {
+    @apply text-2xl font-bold;
+  }
+
+  .bold-20 {
+      @apply text-xl font-bold;
+  }
+
+  .regular-18 {
+      @apply text-lg font-medium;
+  }
+
+  .regular-16 {
+      @apply text-base font-normal;
+  }
+
+  .regular-14 {
+      @apply text-sm font-normal;
+  }
+
+  .regular-12 {
+      @apply text-xs font-normal;
+  }
+}

@@ -10,7 +10,6 @@
       "@/*": ["./src/*"],
       "lib/*": ["./src/lib/*"],
       "api/*": ["./src/api/*"],
-      "auth/*": ["./src/auth/*"],
       "components/*":["./src/components/*"],
       "constants/*":["./src/constants/*"],
       "hooks/*":["./src/hooks/*"],
@@ -18,10 +17,7 @@
       "assets/*":["./src/assets/*"],
       "types/*":["./src/types/*"],
       "utils/*":["./src/utils/*"],
-      "store/*":["./src/store/*"],
-      "stores/*":["./src/stores/*"],
       "defines/*":["./src/defines/*"],
-      "services/*":["./src/services/*"]
     },
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
