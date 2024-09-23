@@ -18,3 +18,4 @@ coverage/
 
 # Internal files
 .logs
+./logs

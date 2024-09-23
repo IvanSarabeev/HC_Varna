@@ -2,7 +2,7 @@ import { Request, response, Response } from "express";
 import { sendEmailResponse } from "service/Email";
 import { INTERNAL_SERVER_ERROR } from "utils/ResponseStatus";
 
-export const submitContactMessage = async (req: Request, res: Response) => {
+export const handleContactMessage = async (req: Request, res: Response) => {
     try {
         const { firstName, lastName, email, phone, message } = req.body;
 
