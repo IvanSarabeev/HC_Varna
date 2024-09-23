@@ -41,6 +41,8 @@ const runDb = async () => {
       await client.db(process.env.DB_NAME ?? '').command({ ping: 1}); // Health-Check Connection
 
       console.log("Successfully connected to MongoDB");
+    } catch (error) {
+        logger.error("Database Connection Error: ", error);
     } finally {
         await client.close();
     }
