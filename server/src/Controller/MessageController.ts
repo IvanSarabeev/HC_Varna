@@ -1,8 +1,10 @@
-import { Request, response, Response } from "express";
+import { Request, Response } from "express";
 import { sendEmailResponse } from "service/Email";
 import { INTERNAL_SERVER_ERROR } from "utils/ResponseStatus";
 
 export const handleContactMessage = async (req: Request, res: Response) => {
+    // const validateData = validation
+    
     try {
         const { firstName, lastName, email, phone, message } = req.body;
 

@@ -1,6 +1,6 @@
+import xssFilters from "xss-filters";
 import { UserForm } from "Interfaces/UserFormIntf";
 import { transport } from "utils/NodemailerConfig";
-import xssFilters from "xss-filters";
 
 export const sendEmailResponse = async (formData: UserForm) => {
     try {
