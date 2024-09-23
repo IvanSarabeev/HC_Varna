@@ -7,11 +7,13 @@ import path from "path";
 import helmet from "helmet";
 import logger from './Utils/Logger';
 import cors from "cors";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT ?? process.env.RESERVE_PORT;
+const MongoDbUrl = process.env.DB_CONNECTION ?? "Empty String";
 
 // TODO: Update the SecurityPolicy
 app.use(helmet({
@@ -23,6 +25,28 @@ const csrfProtection = csurf({ cookie: true });
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
+
+const client = new MongoClient(MongoDbUrl, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+});
+
+const runDb = async () => {
+    try {
+      await client.connect();
+      
+      await client.db(process.env.DB_NAME ?? '').command({ ping: 1}); // Health-Check Connection
+
+      console.log("Successfully connected to MongoDB");
+    } finally {
+        await client.close();
+    }
+};
+
+runDb().catch(console.dir);
 
 app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}`);
